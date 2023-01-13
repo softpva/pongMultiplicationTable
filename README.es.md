@@ -31,7 +31,7 @@
 
 > ## En medio de un juego típico.
 > - Felicidades, obtuviste el resultado d 4 x 8 bien!!!
-> - ¡¿Resolvamos ahora 4 x 9?!
+> - ¡¿Resolvamos ahora 4 x 9?!  
 > ![cualquier página](./readmeImages/hit_4x8.gif)
 
 # Modelos
