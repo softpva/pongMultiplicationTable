@@ -1,5 +1,5 @@
 # **Pong Multiplication Tables**
-[![en](https://img.shields.io/badge/lang-en-red.svg)](https://github.com/softpva)
+[![en](https://img.shields.io/badge/lang-en-red.svg)](https://github.com/softpva/pongMultiplicationTable)
 [![pt-br](https://img.shields.io/badge/lang-pt--br-green.svg)](./README.pt-br.md)
 [![es](https://img.shields.io/badge/lang-es-yellow.svg)](./README.es.md)
   
@@ -15,9 +15,9 @@
 > - This is a pong game where you must solve a multiplication table.
 > - The multiplication tables vary randomly by 2 to 12.
 > - The positions of numbered squares are also generated randomly.
-> - The result of each multiplication is settled by the sum of the impact of the ball or pillow in the numbered squares. 
+> - The result of each multiplication is settled by the sum of the impact of the ball or pad  in the numbered squares. 
 > - Danger warning: the ball velocity change by impact velocity of the pad. 
-> - The pad impact also change the sign of the numbered squares.
+> - The pad impact also change the sign of the numbered squares.(e.g.: 5 becomes -5)
 > - For each impact the numbered square change randomly its position.
 > - The yellow square launch a new ball to the game. 
 > - Danger warning: there can many balls at the same time.
@@ -28,13 +28,13 @@
 
 # Layouts
 > ## A typical start page  
-> - The table type and square positions are randomly generated. 
+> - The table type and square positions are randomly generated.  
 > ![initial page](./readmeImages/start_page_4.gif)
 
 > ## In the middle of a typical game.
 > - Congrats, you got the result of four times nine right!!!  
-> - Let's go to four times nine!
-> ![initial page](./readmeImages/hit_4x8.gif)
+> - Let's go to four times nine ?!
+> ![any page](./readmeImages/hit_4x8.gif)
 
 
 # Models
