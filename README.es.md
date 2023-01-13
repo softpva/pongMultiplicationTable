@@ -23,3 +23,36 @@
 > - Cuidado: pueden aparecer nuevos cuadrados amarillos al mismo tiempo.
 > - Hay un contador de tiempo, por ahora, simplemente para su propia información.
 > - Ganas el juego completando una tabla respectiva.
+
+# Diseños
+> ## Una página de inicio típica
+> - El tipo de tabla y la posición de los cuadrados se generan aleatoriamente.
+> ![página de inicio](./readmeImages/start_page_4.gif)
+
+> ## En medio de un juego típico.
+> - Felicidades, obtuviste el resultado d 4 x 8 bien!!!
+> - ¡¿Resolvamos ahora 4 x 9?!
+> ![cualquier página](./readmeImages/hit_4x8.gif)
+
+# Modelos
+> - Godot adopta en esencia un diseño orientado a objetos con un sistema flexible de escenas y jerarquías de nodos.
+> - Árboles de nodos (nodo: el bloque de construcción más pequeño) que los agrupan en escenas.
+> - Los nodos se comunican entre sí a través de señales.
+> - Un script en el lenguaje GDScript es una clase que extiende (hereda) una clase de nodo o una nueva clase original.
+
+# Tecnologías
+> - Godot engine 2.1.4
+>     - http://downloads.tuxfamily.org/godotengine/2.1.4/
+> - GDScript (parecido com python)
+
+# Ejecutar el juego
+> - Descarga Godot y el juego.
+> - Inicie godot e importe el archivo engine.cfg en el directorio raíz del juego.
+> - Ejecutar en modo desarrollo o compilar (exportar) para android, ios, windows, linux, etc.
+
+# Autor
+> Pedro Vitor Abreu
+>
+> <soft.pva@gmail.com>
+>
+> <https://github.com/softpva>

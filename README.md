@@ -32,8 +32,8 @@
 > ![initial page](./readmeImages/start_page_4.gif)
 
 > ## In the middle of a typical game.
-> - Congrats, you got the result of four times nine right!!!  
-> - Let's go to four times nine ?!
+> - Congrats, you got the result of four times nine right!!!   
+> - Let's go to four times nine ?!  
 > ![any page](./readmeImages/hit_4x8.gif)
 
 
