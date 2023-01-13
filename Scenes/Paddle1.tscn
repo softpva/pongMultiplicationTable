@@ -1,0 +1,100 @@
+[gd_scene load_steps=7 format=1]
+
+[ext_resource path="res://Scripts/Paddle1.gd" type="Script" id=1]
+[ext_resource path="res://Textures/WhiteCircle.png" type="Texture" id=2]
+[ext_resource path="res://sounds/sound_explode.wav" type="Sample" id=3]
+[ext_resource path="res://sounds/sound_shoot.wav" type="Sample" id=4]
+
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 16.0
+
+[sub_resource type="SampleLibrary" id=2]
+
+samples/sound_explode = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 3 )
+}
+samples/sound_shoot = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 4 )
+}
+
+[node name="Paddle1" type="RigidBody2D"]
+
+transform/pos = Vector2( 16, 732 )
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+mode = 3
+mass = 1.0
+friction = 0.0
+bounce = 0.0
+gravity_scale = 0.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 1
+contact_monitor = true
+sleeping = false
+can_sleep = true
+velocity/linear = Vector2( 0, 0 )
+velocity/angular = 0.0
+damp_override/linear = 0.0
+damp_override/angular = 0.0
+script/script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Anchor" type="Position2D" parent="."]
+
+transform/pos = Vector2( 0, 24 )
+
+[node name="lb" type="Label" parent="."]
+
+rect/scale = Vector2( 0.8, 0.8 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -17.0
+margin/top = -4.0
+margin/right = 22.0
+margin/bottom = 11.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = " P A D"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="sounds" type="SamplePlayer2D" parent="."]
+
+params/volume_db = 0.0
+params/pitch_scale = 1.0
+params/attenuation/min_distance = 1.0
+params/attenuation/max_distance = 2048.0
+params/attenuation/distance_exp = 1.0
+config/polyphony = 1
+config/samples = SubResource( 2 )
+config/pitch_random = 0.0
+
+

@@ -1,0 +1,245 @@
+[gd_scene load_steps=12 format=1]
+
+[ext_resource path="res://Scripts/mathShot.gd" type="Script" id=1]
+[ext_resource path="res://Textures/face1.png" type="Texture" id=2]
+[ext_resource path="res://Fonts/nevis.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Scripts/count.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/Paddle1.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scripts/Bricks.gd" type="Script" id=6]
+[ext_resource path="res://Scripts/Balls.gd" type="Script" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+
+font/size = 40
+font/use_mipmaps = false
+font/use_filter = false
+font/font = ExtResource( 3 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 1, 1, 1, 770, -32, 770, -32, -32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 1, 1, -32, -32, 496, -32, 463, 1 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 463, 1, 496, -32, 496, 770, 463, 770 )
+
+[node name="mathShot" type="Node2D"]
+
+script/script = ExtResource( 1 )
+yearToExpire = 2023
+
+[node name="Operation" type="TextureFrame" parent="."]
+
+visibility/behind_parent = true
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 464.0
+margin/bottom = 768.0
+texture = ExtResource( 2 )
+stretch_mode = 0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="op1" type="Label" parent="Operation"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 16.0
+margin/right = 53.0
+margin/bottom = 69.0
+custom_fonts/font = SubResource( 1 )
+text = "1"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="op" type="Label" parent="Operation"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 96.0
+margin/top = 16.0
+margin/right = 152.0
+margin/bottom = 70.0
+custom_fonts/font = SubResource( 1 )
+text = "x"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="op2" type="Label" parent="Operation"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 184.0
+margin/top = 19.0
+margin/right = 240.0
+margin/bottom = 73.0
+custom_fonts/font = SubResource( 1 )
+text = "1"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="equal" type="Label" parent="Operation"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 290.0
+margin/top = 16.0
+margin/right = 346.0
+margin/bottom = 70.0
+custom_fonts/font = SubResource( 1 )
+text = "="
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="res" type="Label" parent="Operation"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 360.0
+margin/top = 16.0
+margin/right = 416.0
+margin/bottom = 70.0
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="say" type="Label" parent="Operation"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 8.0
+margin/top = 80.0
+margin/right = 44.0
+margin/bottom = 124.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.964844, 0.0339203, 0.0993758, 1 )
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="count" type="Label" parent="Operation"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 407.0
+margin/top = 110.0
+margin/right = 447.0
+margin/bottom = 124.0
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script/script = ExtResource( 4 )
+
+[node name="Paddle1" parent="." instance=ExtResource( 5 )]
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 3 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/1/trigger = false
+shapes/2/shape = SubResource( 4 )
+shapes/2/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/2/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
+
+build_mode = 0
+polygon = Vector2Array( 1, 770, -32, 770, -32, -32, 496, -32, 496, 770, 463, 770, 463, 1, 1, 1 )
+shape_range = Vector2( 0, 2 )
+trigger = false
+
+[node name="Bricks" type="Node2D" parent="."]
+
+transform/pos = Vector2( 0, 128 )
+script/script = ExtResource( 6 )
+
+[node name="Particles" type="Particles2D" parent="Bricks"]
+
+transform/pos = Vector2( 96, 224 )
+transform/scale = Vector2( 3, 3 )
+config/amount = 1000
+config/lifetime = 1.0
+config/emitting = false
+config/process_mode = 1
+params/direction = 180.0
+params/spread = 180.0
+params/linear_velocity = 40.0
+params/spin_velocity = 0.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 0.0
+params/gravity_strength = 0.0
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 0.0
+params/initial_size = 1.0
+params/final_size = 1.0
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+color/color = Color( 1, 0, 0, 1 )
+
+[node name="Balls" type="Node2D" parent="."]
+
+script/script = ExtResource( 7 )
+
+

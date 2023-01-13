@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=1]
+
+[ext_resource path="res://Scripts/RedBrick.gd" type="Script" id=1]
+[ext_resource path="res://Textures/rect32x32.png" type="Texture" id=2]
+
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 32, 32 )
+
+[node name="RedBrick" type="StaticBody2D"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 0.5, 0, 0, 0.5, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script/script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+
+texture = ExtResource( 2 )
+modulate = Color( 0.804688, 0.0220032, 0.0953798, 1 )
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+
+transform/scale = Vector2( 0.5, 0.5 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="lb" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -14.0
+margin/top = -8.0
+margin/right = 18.0
+margin/bottom = 6.0
+text = "+ 2"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+
